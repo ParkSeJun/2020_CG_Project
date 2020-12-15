@@ -4,6 +4,20 @@
 #include "pch.h"
 #include "MainApp.h"
 #include "Camera_Debug.h"
+#include <stdio.h>
+#include <Windows.h>
+
+
+#pragma comment(lib, "winmm.lib")
+#include "Mmsystem.h"
+#include "Digitalv.h"
+MCI_OPEN_PARMS m_mciOpenParms;
+MCI_PLAY_PARMS m_mciPlayParms;
+DWORD m_dwDeviceID;
+MCI_OPEN_PARMS mciOpen;
+MCI_PLAY_PARMS mciPlay;
+
+int dwID;
 
 int		iWindow = 0;
 void	Render();
@@ -18,7 +32,8 @@ bool	IsLine = false;
 bool	IsReturn = false;
 bool	IsCam = false;
 _float timebase = 0.f;
-CMainApp*	pMainApp = new CMainApp;
+CMainApp* pMainApp = new CMainApp;
+
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
@@ -37,7 +52,29 @@ int main(int argc, char** argv)
 	else
 		cout << "GLEW Init" << endl;
 
-	PlaySound(TEXT(SOUND_FILE), NULL, SND_ASYNC | SND_LOOP);
+	char buffer1[] = SOUND_FILE;
+	wchar_t text1[60];
+	mbstowcs(text1, buffer1, strlen(buffer1) + 1);
+	LPCWSTR lpcw1 = text1;
+
+	char buffer2[] = "mpegvideo";
+	wchar_t text2[30];
+	mbstowcs(text2, buffer2, strlen(buffer2) + 1);
+	LPCWSTR lpcw2 = text2;
+
+	mciOpen.lpstrElementName = lpcw1; // 파일 경로 입력
+	mciOpen.lpstrDeviceType = lpcw2;
+
+	mciSendCommand(NULL, MCI_OPEN, MCI_OPEN_ELEMENT | MCI_OPEN_TYPE,
+		(DWORD)(LPVOID)&mciOpen);
+
+	dwID = mciOpen.wDeviceID;
+
+	mciSendCommand(dwID, MCI_PLAY, MCI_DGV_PLAY_REPEAT, // play & repeat
+		(DWORD)(LPVOID)&m_mciPlayParms);
+
+
+	//PlaySound(TEXT(SOUND_FILE), NULL, SND_ASYNC | SND_LOOP);
 
 	pMainApp->Init();
 
@@ -51,7 +88,7 @@ int main(int argc, char** argv)
 	glutMainLoop();
 }
 
-void Render() 
+void Render()
 {
 	glClearColor(0.f, 0.f, 1.f, 1.f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -59,7 +96,7 @@ void Render()
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	glEnable(GL_DEPTH_TEST);
 	glDisable(GL_CULL_FACE);
-	 
+
 	pMainApp->Render();
 
 	glutSwapBuffers();
