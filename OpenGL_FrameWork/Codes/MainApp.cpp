@@ -88,8 +88,17 @@ HRESULT CMainApp::SetUp_Texture_Filltering()
 	return S_OK;
 }
 
+float GetRandom(int min, int max)
+{
+	int r = (rand() % (max - min + 1)) + min;
+	int r2 = rand() % 10;
+	return (float)(r * 10 + r2) / 10.f;
+}
+
 HRESULT CMainApp::Create_Object()
 {
+	//srand(time(0));
+
 	CObj* pObj = CAbstractFactory<CLight>::CreateObj(vec3(100.f, 1000.f, 100.f), vec3(1.f, 1.f, 1.f), "Light_Default");
 	if (nullptr == pObj)
 		return E_FAIL;
@@ -105,9 +114,21 @@ HRESULT CMainApp::Create_Object()
 		return E_FAIL;
 	CObjectMgr::GetInstance()->Add_Object(pObj, OBJECT_TERRAIN);
 
-	for (int i = 0; i < 4; ++i)
+	const int robotSpawnCount = 10;
+	float* randomPoints = new float[robotSpawnCount * 2];
+	for (int i = 0; i < robotSpawnCount * 2; ++i)
 	{
-		pObj = CAbstractFactory<CRobot>::CreateObj(vec3(0+50*i, 0.f, 0 + 50 * i), vec3(1.f, 1.f, 1.f), vec3());
+		if (i % 2 == 0)
+			randomPoints[i] = GetRandom(48, 78);
+		else
+			randomPoints[i] = GetRandom(52, 76);
+	}
+
+	for (int i = 0; i < robotSpawnCount; ++i)
+	{
+		float rx = randomPoints[i * 2];
+		float rz = randomPoints[i * 2 + 1];
+		pObj = CAbstractFactory<CRobot>::CreateObj(vec3(rx, 0.f, rz), vec3(1.f, 1.f, 1.f), vec3());
 		if (nullptr == pObj)
 			return E_FAIL;
 		CObjectMgr::GetInstance()->Add_Object(pObj, OBJECT_MONSTER);
