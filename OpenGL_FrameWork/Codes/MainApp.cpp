@@ -62,6 +62,12 @@ void CMainApp::Update(_float fTimeDelta)
 		CCameraMgr::GetInstance()->Swap_Camera(CAMERA_QUARTAR);
 	else if (CKeyMgr::GetInstance()->KeyDown(KEY_3))
 		CCameraMgr::GetInstance()->Swap_Camera(CAMERA_DEBUG);
+	else if (CKeyMgr::GetInstance()->KeyDown(KEY_R))
+	{
+		CObjectMgr::GetInstance()->Release();
+		Create_Object();
+		CCameraMgr::GetInstance()->SetUp_CameraOption(CAMERA_QUARTAR);
+	}
 
 
 	CInputMgr::GetInstance()->SetUp_InputState();

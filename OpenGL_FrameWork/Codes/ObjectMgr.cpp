@@ -2,6 +2,7 @@
 #include "..\Headers\ObjectMgr.h"
 #include "Transform.h"
 #include "Obj.h"
+#include "MainApp.h"
 
 _IMPLEMENT_SINGLETON(CObjectMgr)
 CObjectMgr::CObjectMgr()
@@ -49,7 +50,10 @@ void CObjectMgr::Update(_float fTimeDelta)
 	bool isFoodAllDie = CCollisionMgr::GetInstance()->Check_Collision_Food(m_vecObj[OBJECT_PLAYER][0], m_vecObj[OBJECT_FOOD]);
 	if (isFoodAllDie)
 	{
-		// TODO: 모든 음식을 다 먹었을 때 -> 맵 변경?
+		// 모든 음식을 다 먹었을 때 -> 맵 변경
+		CObjectMgr::GetInstance()->Release();
+		pMainApp->Create_Object();
+		CCameraMgr::GetInstance()->SetUp_CameraOption(CAMERA_QUARTAR);
 	}
 }
 

@@ -11,7 +11,7 @@ public:
 	void	Release();
 private:
 	HRESULT		SetUp_Texture_Filltering();
-private:
+public:
 	HRESULT		Create_Object();
 };
 
