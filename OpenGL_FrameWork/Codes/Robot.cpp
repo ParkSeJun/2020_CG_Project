@@ -21,91 +21,64 @@ HRESULT CRobot::Init()
 	return S_OK;
 }
 
+vec3 GetRandomPos(float y)
+{
+	int		iRandX = rand() % (123 - 4 + 1) + 4;
+	int		iRandZ = rand() % (123 - 4 + 1) + 4;
+	vec3 pos = { (float)iRandX, y, (float)iRandZ };
+	return pos;
+}
+
 HRESULT CRobot::Init(vec3 vPos, vec3 vSize, vec3 vColor)
 {
 	m_pBuffer = new CBuffer_RobotNor;
 	m_pBuffer->Init();
 	m_pTransform = new CTransform;
 
-	m_pTransform->SetUp_Speed(0.1f, radians(0.1f));
+	m_pTransform->SetUp_Speed(0.15f, radians(0.1f));
 	m_pTransform->Scaling(vSize);
 	m_pTransform->Set_StateInfo(STATE_POSITION, &vPos);
 
-
-
-
 	m_pTransform->SetUp_RotationY(radians(90.f));
 
-	int		iRandX = rand()%50+1;
-	int		iRandZ = rand()%50+1;
 
-	m_vDest = {(float)iRandX, m_pTransform->Get_StateInfo(STATE_POSITION)->y, (float)iRandZ};
+
+	m_vDest = GetRandomPos(m_pTransform->Get_StateInfo(STATE_POSITION)->y);
 	//m_vDest = {100, 1.f, 100};
-	
 
 	return S_OK;
 }
 
 int CRobot::Update(_float fTimeDelta)
 {
-	m_vTempPos = *m_pTransform->Get_StateInfo(STATE_POSITION);
-	m_vTempPos.y = 1.f;
-	float iLength = length(m_vDest - m_vTempPos);
-	_float fCameraLength = 0.f;
-	float fDot = 0.f;
-
-	if (IsCam == false)
-	{
-		m_vCameraPos = *CObjectMgr::GetInstance()->GetObject_List(OBJECT_CAMERA)[0]->GetTransform()->Get_StateInfo(STATE_POSITION);
-		m_vCameraPos.y = 1.f;
-
-		vec3 vCameraPosbyThisPos = m_vCameraPos - *m_pTransform->Get_StateInfo(STATE_POSITION);
-		fCameraLength = length(vCameraPosbyThisPos);
-		vCameraPosbyThisPos = normalize(vCameraPosbyThisPos);
-		vec3 vTempPos = *m_pTransform->Get_StateInfo(STATE_POSITION);
-		vTempPos.y = 1.f;
-		vTempPos = normalize(vTempPos);
-		fDot = dot(vTempPos, vCameraPosbyThisPos);
-	}
-	else
-	{
-		m_vCameraPos = *CObjectMgr::GetInstance()->GetObject_List(OBJECT_PLAYER)[0]->GetTransform()->Get_StateInfo(STATE_POSITION);
-		m_vCameraPos.y = 1.f;
-
-		vec3 vCameraPosbyThisPos = m_vCameraPos - *m_pTransform->Get_StateInfo(STATE_POSITION);
-		fCameraLength = length(vCameraPosbyThisPos);
-		vCameraPosbyThisPos = normalize(vCameraPosbyThisPos);
-		vec3 vTempPos = *m_pTransform->Get_StateInfo(STATE_POSITION);
-		vTempPos.y = 1.f;
-		vTempPos = normalize(vTempPos);
-		fDot = dot(vTempPos, vCameraPosbyThisPos);
-	}
-
-
-
-	if (fCameraLength <= 20.f)
-	{
-		Compute_RULC();
-		if (fabs(fDot) >=0.5f && fabs(fDot) <= (1.5f))
-		{
-			m_pTransform->Go_ToTarget(&m_vCameraPos);
-		}
-	}
-	else
-	{
-		m_pTransform->Go_ToTarget(&m_vDest);
-		Compute_RUL();
-		if (iLength <= 3.f)
-		{
-			int		iRandX = rand() % 50 + 1;
-			int		iRandZ = rand() % 50 + 1;
-
-			m_vDest = { (float)iRandX, 1.f, (float)iRandZ };
-		}
-	}
-
-
+	vec3 nextPoint = m_pTransform->Get_ToTarget(&m_vDest);
 	CBuffer_Terrain* pTerrain = (CBuffer_Terrain*)CObjectMgr::GetInstance()->GetObject_List(OBJECT_TERRAIN)[0]->GetBuffer();
+	CTransform* tempTransform = new CTransform;
+	tempTransform->Set_StateInfo(STATE_POSITION, &nextPoint);
+	_float nextHeight = pTerrain->Compute_HeightOnTerrain(tempTransform);
+	bool isCollideWall = (nextHeight != 19.5f);
+
+	if (isCollideWall)
+	{
+		if (rand() % 2 == 0)
+			m_vDest = GetRandomPos(m_pTransform->Get_StateInfo(STATE_POSITION)->y);
+		else
+			m_vDest = *CObjectMgr::GetInstance()->GetObject_List(OBJECT_PLAYER)[0]->GetTransform()->Get_StateInfo(STATE_POSITION);
+		return 0;
+	}
+
+	float destDistance = m_pTransform->GetDistance(&m_vDest, true);
+	if (destDistance <= .5f)
+	{
+		if (rand() % 2 == 0)
+			m_vDest = GetRandomPos(m_pTransform->Get_StateInfo(STATE_POSITION)->y);
+		else
+			m_vDest = *CObjectMgr::GetInstance()->GetObject_List(OBJECT_PLAYER)[0]->GetTransform()->Get_StateInfo(STATE_POSITION);
+		return 0;
+	}
+
+	m_pTransform->Go_ToTarget(&m_vDest);
+	Compute_RUL();
 	_float fY = pTerrain->Compute_HeightOnTerrain(this->GetTransform());
 	fY += 0.5f;
 
@@ -159,7 +132,7 @@ void CRobot::Compute_RUL()
 	vec3 vLook = m_vDest - m_vTempPos;
 	vLook = normalize(vLook);
 
-	vec3 vUp = vec3(0.f,1.f,0.f);
+	vec3 vUp = vec3(0.f, 1.f, 0.f);
 	vec3 vRight = cross(vUp, vLook);
 
 	m_pTransform->Set_StateInfo(STATE_LOOK, &vLook);

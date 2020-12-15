@@ -21,13 +21,13 @@ HRESULT CTransform::Init()
 	return S_OK;
 }
 
-vec3 * CTransform::Get_StateInfo(STATE eState)
+vec3* CTransform::Get_StateInfo(STATE eState)
 {
 	vec3* temp = (vec3*)&m_matWorld[eState][0];
 	return temp;
 }
 
-mat4 CTransform::GetNoneScaleMatrix( _float fScaleX, _float fScaleY, _float fScaleZ)
+mat4 CTransform::GetNoneScaleMatrix(_float fScaleX, _float fScaleY, _float fScaleZ)
 {
 	mat4 matTemp = m_matWorld;
 	matTemp[0][0] = fScaleX;
@@ -54,12 +54,12 @@ mat4 CTransform::Get_Matrix_Inverse() const
 
 
 
-void CTransform::Set_StateInfo(STATE eState, const vec3 * pInfo)
+void CTransform::Set_StateInfo(STATE eState, const vec3* pInfo)
 {
 	memcpy(&m_matWorld[eState][0], pInfo, sizeof(vec3));
 }
 
-void CTransform::SetUp_Speed(const _float & fSpeed, const _float& fRotSpeed)
+void CTransform::SetUp_Speed(const _float& fSpeed, const _float& fRotSpeed)
 {
 	m_fSpeed = fSpeed;
 	m_fRotation_Speed = fRotSpeed;
@@ -163,7 +163,7 @@ void CTransform::Go_Down()
 	Set_StateInfo(STATE_POSITION, &vPosition);
 }
 
-void CTransform::SetUp_RotationX(const _float & fRadian)
+void CTransform::SetUp_RotationX(const _float& fRadian)
 {
 	vec3		vRight(1.f, 0.f, 0.f), vUp(0.f, 1.f, 0.f), vLook(0.f, 0.f, 1.f);
 
@@ -174,16 +174,16 @@ void CTransform::SetUp_RotationX(const _float & fRadian)
 	vUp *= GetScale().y;
 	vLook *= GetScale().z;
 
-	vRight = mat3(matRot)*vRight;
-	vUp = mat3(matRot)*vUp;
-	vLook = mat3(matRot)*vLook;
+	vRight = mat3(matRot) * vRight;
+	vUp = mat3(matRot) * vUp;
+	vLook = mat3(matRot) * vLook;
 
 	Set_StateInfo(STATE_RIGHT, &vRight);
 	Set_StateInfo(STATE_UP, &vUp);
 	Set_StateInfo(STATE_LOOK, &vLook);
 }
 
-void CTransform::SetUp_RotationY(const _float & fRadian)
+void CTransform::SetUp_RotationY(const _float& fRadian)
 {
 	vec3		vRight(1.f, 0.f, 0.f), vUp(0.f, 1.f, 0.f), vLook(0.f, 0.f, 1.f);
 
@@ -194,16 +194,16 @@ void CTransform::SetUp_RotationY(const _float & fRadian)
 	vUp *= GetScale().y;
 	vLook *= GetScale().z;
 
-	vRight = mat3(matRot)*vRight;
-	vUp = mat3(matRot)*vUp;
-	vLook = mat3(matRot)*vLook;
+	vRight = mat3(matRot) * vRight;
+	vUp = mat3(matRot) * vUp;
+	vLook = mat3(matRot) * vLook;
 
 	Set_StateInfo(STATE_RIGHT, &vRight);
 	Set_StateInfo(STATE_UP, &vUp);
 	Set_StateInfo(STATE_LOOK, &vLook);
 }
 
-void CTransform::SetUp_RotationZ(const _float & fRadian)
+void CTransform::SetUp_RotationZ(const _float& fRadian)
 {
 	vec3		vRight(1.f, 0.f, 0.f), vUp(0.f, 1.f, 0.f), vLook(0.f, 0.f, 1.f);
 
@@ -214,9 +214,9 @@ void CTransform::SetUp_RotationZ(const _float & fRadian)
 	vUp *= GetScale().y;
 	vLook *= GetScale().z;
 
-	vRight = mat3(matRot)*vRight;
-	vUp = mat3(matRot)*vUp;
-	vLook = mat3(matRot)*vLook;
+	vRight = mat3(matRot) * vRight;
+	vUp = mat3(matRot) * vUp;
+	vLook = mat3(matRot) * vLook;
 
 	Set_StateInfo(STATE_RIGHT, &vRight);
 	Set_StateInfo(STATE_UP, &vUp);
@@ -232,9 +232,9 @@ void CTransform::RotationX(_float fDir)
 
 	mat4			matRot = mat4(1.f);
 
-	matRot = rotate(matRot, m_fRotation_Speed*fDir, vec3(1.f, 0.f, 0.f));
+	matRot = rotate(matRot, m_fRotation_Speed * fDir, vec3(1.f, 0.f, 0.f));
 	for (size_t i = 0; i < 3; ++i)
-		vDir[i] = mat3(matRot)*vDir[i];
+		vDir[i] = mat3(matRot) * vDir[i];
 
 	Set_StateInfo(STATE_RIGHT, &vDir[STATE_RIGHT]);
 	Set_StateInfo(STATE_UP, &vDir[STATE_UP]);
@@ -250,9 +250,9 @@ void CTransform::RotationY(_float fDir)
 
 	mat4			matRot = mat4(1.f);
 
-	matRot = rotate(matRot, m_fRotation_Speed*fDir, vec3(0.f, 1.f, 0.f));
+	matRot = rotate(matRot, m_fRotation_Speed * fDir, vec3(0.f, 1.f, 0.f));
 	for (size_t i = 0; i < 3; ++i)
-		vDir[i] = mat3(matRot)*vDir[i];
+		vDir[i] = mat3(matRot) * vDir[i];
 
 	Set_StateInfo(STATE_RIGHT, &vDir[STATE_RIGHT]);
 	Set_StateInfo(STATE_UP, &vDir[STATE_UP]);
@@ -268,16 +268,16 @@ void CTransform::RotationZ(_float fDir)
 
 	mat4			matRot = mat4(1.f);
 
-	matRot = rotate(matRot, m_fRotation_Speed*fDir, vec3(0.f, 0.f, 1.f));
+	matRot = rotate(matRot, m_fRotation_Speed * fDir, vec3(0.f, 0.f, 1.f));
 	for (size_t i = 0; i < 3; ++i)
-		vDir[i] = mat3(matRot)*vDir[i];
+		vDir[i] = mat3(matRot) * vDir[i];
 
 	Set_StateInfo(STATE_RIGHT, &vDir[STATE_RIGHT]);
 	Set_StateInfo(STATE_UP, &vDir[STATE_UP]);
 	Set_StateInfo(STATE_LOOK, &vDir[STATE_LOOK]);
 }
 
-void CTransform::Rotation_Axis(_float fDir, const vec3 * pAxis)
+void CTransform::Rotation_Axis(_float fDir, const vec3* pAxis)
 {
 	vec3		vDir[3];
 
@@ -285,9 +285,9 @@ void CTransform::Rotation_Axis(_float fDir, const vec3 * pAxis)
 		vDir[i] = *Get_StateInfo(STATE(i));
 
 	mat4			matRot = mat4(1.f);
-	matRot = rotate(matRot, m_fRotation_Speed*fDir, *pAxis);
+	matRot = rotate(matRot, m_fRotation_Speed * fDir, *pAxis);
 	for (size_t i = 0; i < 3; ++i)
-		vDir[i] = mat3(matRot)*vDir[i];
+		vDir[i] = mat3(matRot) * vDir[i];
 
 	Set_StateInfo(STATE_RIGHT, &vDir[STATE_RIGHT]);
 	Set_StateInfo(STATE_UP, &vDir[STATE_UP]);
@@ -313,7 +313,7 @@ void CTransform::Scaling(vec3 vScale)
 	Set_StateInfo(STATE_LOOK, &vDir[STATE_LOOK]);
 }
 
-void CTransform::Go_ToTarget(vec3 * pTargetPos)
+void CTransform::Go_ToTarget(vec3* pTargetPos)
 {
 	vec3	vLook, vPosition;
 
@@ -326,7 +326,20 @@ void CTransform::Go_ToTarget(vec3 * pTargetPos)
 	Set_StateInfo(STATE_POSITION, &vPosition);
 }
 
-void CTransform::Rotaion_Rev(mat4 matParent, const vec3 * pAxis)
+vec3 CTransform::Get_ToTarget(vec3* pTargetPos)
+{
+	vec3	vLook, vPosition;
+
+	vPosition = *Get_StateInfo(STATE_POSITION);
+
+	vLook = *pTargetPos - vPosition;
+	vLook = normalize(vLook);
+	vPosition += vLook * m_fSpeed;
+
+	return vPosition;
+}
+
+void CTransform::Rotaion_Rev(mat4 matParent, const vec3* pAxis)
 {
 	mat4 matResult = mat4(1.f);
 	mat4 matScale = mat4(1.f);
@@ -376,12 +389,25 @@ void CTransform::Shake()
 		//m_iCnt_Shake = -1;
 		return;
 	}
-	else if(m_iCnt_Shake < 0)
+	else if (m_iCnt_Shake < 0)
 	{
 		this->Get_StateInfo(STATE_POSITION)->y -= 10;
 		//m_iCnt_Shake = 1;
 		return;
 	}
 }
+
+float CTransform::GetDistance(const vec3* other, bool ignoreY)
+{
+	vec3 pos = *this->Get_StateInfo(STATE_POSITION);
+	float xDiff = other->x - pos.x;
+	float yDiff = other->y - pos.y;
+	if (ignoreY)
+		yDiff = 0.f;
+	float zDiff = other->z - pos.z;
+	float result = sqrt(xDiff * xDiff + yDiff * yDiff + zDiff * zDiff);
+	return result;
+}
+
 
 

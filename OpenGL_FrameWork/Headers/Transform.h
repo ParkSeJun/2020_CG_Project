@@ -39,9 +39,11 @@ public:
 	void					Rotation_Axis(_float fDir, const vec3* pAxis);
 	void					Scaling(vec3 vScale);
 	void					Go_ToTarget(vec3* pTargetPos);
+	vec3					Get_ToTarget(vec3* pTargetPos);
 	void					Rotaion_Rev(mat4 matParent, const vec3 * pAxis);
 	void					TempRotate(float fDir);
 	void					Shake();
+	float					GetDistance(const vec3* other, bool ignoreY);
 private:
 	mat4					m_matWorld = mat4(1.f);
 	_float					m_fSpeed = 0.f;

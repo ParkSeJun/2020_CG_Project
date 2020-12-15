@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "..\Headers\ObjectMgr.h"
+#include "Transform.h"
 #include "Obj.h"
 
 _IMPLEMENT_SINGLETON(CObjectMgr)
@@ -37,7 +38,13 @@ void CObjectMgr::Update(_float fTimeDelta)
 		}
 	}
 
-	CCollisionMgr::GetInstance()->Check_Collision(m_vecObj[OBJECT_MONSTER], m_vecObj[OBJECT_BULLET]);
+	bool isPlayerDie = CCollisionMgr::GetInstance()->Check_Collision(m_vecObj[OBJECT_MONSTER], m_vecObj[OBJECT_PLAYER]);
+	if (isPlayerDie)
+	{
+		vec3 startPos = vec3(65.f, 0.f, 9.3f);
+		m_vecObj[OBJECT_PLAYER][0]->GetTransform()->SetUp_RotationY(radians(180.f));
+		m_vecObj[OBJECT_PLAYER][0]->GetTransform()->Set_StateInfo(STATE_POSITION, &startPos);
+	}
 }
 
 void CObjectMgr::Render()
