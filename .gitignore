@@ -36,7 +36,7 @@ dlldata.c
 *.ilk
 *.meta
 *.obj
-# !sphere.obj
+!sphere.obj
 *.pch
 *.pdb
 *.pgc
