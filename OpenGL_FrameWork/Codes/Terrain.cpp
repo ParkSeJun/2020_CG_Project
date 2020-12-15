@@ -17,7 +17,18 @@ CTerrain::~CTerrain()
 HRESULT CTerrain::Init()
 {
 	m_pBuffer = new CBuffer_Terrain;
-	m_pBuffer->Init(L"../Bin/Resource/Terrain/Map.bmp", 1.f);
+
+	srand(time(NULL));
+	int i = rand() % 4 + 1;
+	if(i == 1)
+		m_pBuffer->Init(L"../Bin/Resource/Terrain/Map.bmp", 1.f);
+	else if(i == 2)
+		m_pBuffer->Init(L"../Bin/Resource/Terrain/Map2.bmp", 1.f);
+	else if (i == 3)
+		m_pBuffer->Init(L"../Bin/Resource/Terrain/Map3.bmp", 1.f);
+	else
+		m_pBuffer->Init(L"../Bin/Resource/Terrain/Map4.bmp", 1.f);
+
 	m_pTransform = new CTransform;
 
 	//m_pTransform->Scaling(vec3(10.f, 10.f, 10.f));
