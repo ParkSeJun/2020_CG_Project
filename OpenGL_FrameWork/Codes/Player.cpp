@@ -74,6 +74,12 @@ int CPlayer::Update(_float fTimeDelta)
 
 	CBuffer_Terrain* pTerrain = (CBuffer_Terrain*)CObjectMgr::GetInstance()->GetObject_List(OBJECT_TERRAIN)[0]->GetBuffer();
 	_float fY = pTerrain->Compute_HeightOnTerrain(this->GetTransform());
+
+
+	vec3* curPos = this->GetTransform()->Get_StateInfo(STATE_POSITION);;
+	char ch[256];
+	sprintf(ch, "Player (%g, %g, %g), Terrain Y%g", curPos->x, curPos->y, curPos->z, fY);
+	glutSetWindowTitle(ch);
 	fY += 0.5f;
 
 	_float fX = m_pTransform->Get_StateInfo(STATE_POSITION)->x;
