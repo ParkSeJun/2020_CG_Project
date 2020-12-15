@@ -78,6 +78,19 @@ void CTransform::Go_Straight()
 	Set_StateInfo(STATE_POSITION, &vPosition);
 }
 
+vec3 CTransform::Get_Straight()
+{
+	vec3		vLook, vPosition;
+	vLook = *Get_StateInfo(STATE_LOOK);
+	vPosition = *Get_StateInfo(STATE_POSITION);
+
+	vLook = normalize(vLook);
+	vLook = vLook * -m_fSpeed;
+	vPosition = vPosition + vLook;
+
+	return vPosition;
+}
+
 void CTransform::BackWard()
 {
 	vec3		vLook, vPosition;

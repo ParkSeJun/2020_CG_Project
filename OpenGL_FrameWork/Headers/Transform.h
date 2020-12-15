@@ -24,6 +24,7 @@ public:
 public:
 	void					SetUp_Speed(const _float& fSpeed, const _float& fRotSpeed);
 	void					Go_Straight();
+	vec3					Get_Straight();
 	void					BackWard();
 	void					Go_Left();
 	void					Go_Right();
