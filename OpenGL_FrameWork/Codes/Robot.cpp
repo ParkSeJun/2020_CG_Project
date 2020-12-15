@@ -36,7 +36,6 @@ HRESULT CRobot::Init(vec3 vPos, vec3 vSize, vec3 vColor)
 
 	m_pTransform->SetUp_RotationY(radians(90.f));
 
-	srand(unsigned(time(NULL)));
 	int		iRandX = rand()%50+1;
 	int		iRandZ = rand()%50+1;
 

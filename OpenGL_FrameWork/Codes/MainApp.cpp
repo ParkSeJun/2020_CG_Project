@@ -97,8 +97,6 @@ float GetRandom(int min, int max)
 
 HRESULT CMainApp::Create_Object()
 {
-	//srand(time(0));
-
 	CObj* pObj = CAbstractFactory<CLight>::CreateObj(vec3(100.f, 1000.f, 100.f), vec3(1.f, 1.f, 1.f), "Light_Default");
 	if (nullptr == pObj)
 		return E_FAIL;
