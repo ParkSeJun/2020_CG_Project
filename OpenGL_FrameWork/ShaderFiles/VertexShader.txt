@@ -1,0 +1,15 @@
+#version 330 core
+
+layout(location=0) in vec3 vPos;
+in vec3 vColor;
+out vec4 OutColor;
+
+uniform mat4 matWorld;
+uniform mat4 matView;
+uniform mat4 matProj;
+
+void main()
+{
+	gl_Position=matProj*matView*matWorld*vec4(vPos, 1.f);
+	OutColor=vec4(vColor,1.f);
+}

@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="99. Default">
+      <UniqueIdentifier>{ce9c7f8e-217a-4158-b822-d6b2f26f252e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00. MainApp">
+      <UniqueIdentifier>{b57ca448-45df-4b6c-93be-ba50fcd6f7dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Headers">
+      <UniqueIdentifier>{2f7737ef-d2df-489e-b239-3b6e2e0ee518}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers">
+      <UniqueIdentifier>{c6270a39-849a-450d-82f8-cb5cecc66492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\00. ObjectMgr">
+      <UniqueIdentifier>{926cd491-d7df-48ee-96e0-7cc40d88d947}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\01. SceneMgr">
+      <UniqueIdentifier>{a505d585-1646-4f2c-92fa-929cf1705cc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\02. Abstract_Factory">
+      <UniqueIdentifier>{9a441508-bb66-4d09-beac-1fe97dbb8544}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\03. KeyMgr">
+      <UniqueIdentifier>{d3cc243c-c23d-4486-9520-8c2dd55d0b43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\04. FrameMgr">
+      <UniqueIdentifier>{557f4257-6d54-4fd1-a462-ca4a66ae7119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\05. TimeMgr">
+      <UniqueIdentifier>{19a888ad-eb14-4cb5-8090-2e6b2b11882c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\06. ShaderMgr">
+      <UniqueIdentifier>{80f4d2aa-f58b-49e3-aba7-100827be74fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object">
+      <UniqueIdentifier>{af4f843a-f2c6-4854-b878-13a0305bd250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\06. ShaderMgr\00. Shader">
+      <UniqueIdentifier>{a9555042-d561-4f7b-9958-332da0f09bfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\06. ShaderMgr\01. ShaderMgr">
+      <UniqueIdentifier>{d6da33f4-50f0-43b6-ab77-71b4c0847fec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. ShaderFiles">
+      <UniqueIdentifier>{97339974-7616-467a-8425-cebfa62b42ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Buffers">
+      <UniqueIdentifier>{c0d3807b-1168-4479-9d9e-13bb5afc465a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Buffers\02. Buffer_RectTex">
+      <UniqueIdentifier>{723f9e9b-bb92-4671-948b-026b56697d2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Buffers\03. Buffer_CubeCol">
+      <UniqueIdentifier>{19d491dc-1c02-4cfb-b131-c222561e4397}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Buffers\01. Buffer_RectCol">
+      <UniqueIdentifier>{ff5ddade-a1cb-4f54-ba17-31d7ae88f34a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Transform">
+      <UniqueIdentifier>{7de48175-dd8c-4239-bfef-b59ac852ca3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\07. CameraMgr">
+      <UniqueIdentifier>{08f118f4-1a52-40b8-8e40-4310b2004f7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\08. InputMgr">
+      <UniqueIdentifier>{4131d876-b2bb-4f94-82c5-097992cd729a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\00. Base_Shape">
+      <UniqueIdentifier>{d54dc24b-957b-4c41-89df-5e704a48429c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\00. Base_Shape\01. Rect">
+      <UniqueIdentifier>{4f98143f-ff3e-4d6f-a932-9cd1bcb3d113}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\00. Base_Shape\00. Tri">
+      <UniqueIdentifier>{9d69d856-7a93-4cb4-bb86-30388f987df2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\00. Base_Shape\03. Line">
+      <UniqueIdentifier>{d4bef75c-921a-4229-b7ce-095e3ca61796}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\00. Base_Shape\04. Cube">
+      <UniqueIdentifier>{e8ff6e48-f9c8-4710-a323-04b49faea7ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01. Object">
+      <UniqueIdentifier>{e8ce47a0-e8c9-4cf4-95d7-c23abb020e6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01. Object\01. Building">
+      <UniqueIdentifier>{2d144483-2ffd-442d-a09c-81491889037b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01. Object\02. Terrain">
+      <UniqueIdentifier>{3586f966-2c68-4f28-99ac-52362e584ed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Buffers\06. Buffer_TankCol">
+      <UniqueIdentifier>{1d269fc7-ce9b-4574-98a0-5e37e812eec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Buffers\07. Buffer_Terrain">
+      <UniqueIdentifier>{597121dc-bd8d-4b04-92dd-377f49db286e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97. Managers\09. CollisionMgr">
+      <UniqueIdentifier>{df5d258e-fd29-4fcd-ad71-10ccb0c4d61b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\00. Base_Shape\05. Tank">
+      <UniqueIdentifier>{a03bff8f-4719-416f-9fc7-54a82b6842c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01. Object\00. Player">
+      <UniqueIdentifier>{e70d2162-9d61-43a2-87f9-d0930c35f948}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\98. Assist">
+      <UniqueIdentifier>{38b34fe3-9198-4458-8b5a-a771aaa1a1a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\98. Assist\00. Line">
+      <UniqueIdentifier>{3e8f9273-ee06-49bc-9802-8cb688034f9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01. Object\05. Bullet">
+      <UniqueIdentifier>{bf22a4df-639b-4674-9b82-93b742c6676b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\02. UI">
+      <UniqueIdentifier>{85fefcdf-d60c-4714-96ab-7954e38117f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. ShaderFiles\00. Default">
+      <UniqueIdentifier>{549ff361-3ad4-4412-9cba-17c0284a21f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. ShaderFiles\01. Texture">
+      <UniqueIdentifier>{f6f3d128-36d9-4c01-b880-1994fd9b13ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Buffers\09. Buffer_CubeNor">
+      <UniqueIdentifier>{0bf1d83d-98a8-492c-80df-3b87a739c4f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96. ShaderFiles\02. Normal">
+      <UniqueIdentifier>{26361ae8-5e16-4ed4-b684-cc719c70e1c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\97. Light">
+      <UniqueIdentifier>{a1efa2af-be3d-4987-b1fd-f09beed07a7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\99. Camera">
+      <UniqueIdentifier>{0bc40345-9e1d-461f-8bd6-5d331fee9127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\99. Camera\00. Camera_Debug">
+      <UniqueIdentifier>{c4944fe5-5370-426d-8e5a-af64363fe45f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\99. Camera\01. Camera_Player">
+      <UniqueIdentifier>{7025c437-1f6b-445b-81ef-0820cdddf58b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Buffers\10. Buffer_RobotNor">
+      <UniqueIdentifier>{f3be2184-1c15-4dda-89cc-cb7f40095210}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\01. Object\07. Robot">
+      <UniqueIdentifier>{f0faed28-ac57-4a76-9315-87e49a314652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Object\99. Camera\02. Camera_Quartar">
+      <UniqueIdentifier>{8750da1a-0edd-4589-904e-35478d80e62a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="OpenGL_FrameWork.cpp">
+      <Filter>99. Default</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>99. Default</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\MainApp.cpp">
+      <Filter>00. MainApp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\ObjectMgr.cpp">
+      <Filter>97. Managers\00. ObjectMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Obj.cpp">
+      <Filter>01. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Shader.cpp">
+      <Filter>97. Managers\06. ShaderMgr\00. Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\ShaderMgr.cpp">
+      <Filter>97. Managers\06. ShaderMgr\01. ShaderMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Buffer.cpp">
+      <Filter>02. Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Tri.cpp">
+      <Filter>01. Object\00. Base_Shape\00. Tri</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Buffer_RectCol.cpp">
+      <Filter>02. Buffers\01. Buffer_RectCol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Rect.cpp">
+      <Filter>01. Object\00. Base_Shape\01. Rect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Buffer_CubeCol.cpp">
+      <Filter>02. Buffers\03. Buffer_CubeCol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Cube.cpp">
+      <Filter>01. Object\00. Base_Shape\04. Cube</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\KeyMgr.cpp">
+      <Filter>97. Managers\03. KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Line.cpp">
+      <Filter>01. Object\00. Base_Shape\03. Line</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Transform.cpp">
+      <Filter>03. Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Camera.cpp">
+      <Filter>01. Object\99. Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Camera_Debug.cpp">
+      <Filter>01. Object\99. Camera\00. Camera_Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\CameraMgr.cpp">
+      <Filter>97. Managers\07. CameraMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\InputMgr.cpp">
+      <Filter>97. Managers\08. InputMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Tank.cpp">
+      <Filter>01. Object\00. Base_Shape\05. Tank</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Buffer_TankCol.cpp">
+      <Filter>02. Buffers\06. Buffer_TankCol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Terrain.cpp">
+      <Filter>01. Object\01. Object\02. Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Buffer_Terrain.cpp">
+      <Filter>02. Buffers\07. Buffer_Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Player.cpp">
+      <Filter>01. Object\01. Object\00. Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Camera_Player.cpp">
+      <Filter>01. Object\99. Camera\01. Camera_Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Bullet.cpp">
+      <Filter>01. Object\01. Object\05. Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Buffer_RectTex.cpp">
+      <Filter>02. Buffers\02. Buffer_RectTex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Buffer_CubeNor.cpp">
+      <Filter>02. Buffers\09. Buffer_CubeNor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\CollisionMgr.cpp">
+      <Filter>97. Managers\09. CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Light.cpp">
+      <Filter>01. Object\97. Light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Buffer_RobotNor.cpp">
+      <Filter>02. Buffers\10. Buffer_RobotNor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Robot.cpp">
+      <Filter>01. Object\01. Object\07. Robot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Camera_Quartar.cpp">
+      <Filter>01. Object\99. Camera\02. Camera_Quartar</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>99. Default</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\MainApp.h">
+      <Filter>00. MainApp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Define.h">
+      <Filter>98. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Function.h">
+      <Filter>98. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Constant.h">
+      <Filter>98. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Extern.h">
+      <Filter>98. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Typedef.h">
+      <Filter>98. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\ObjectMgr.h">
+      <Filter>97. Managers\00. ObjectMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Enum.h">
+      <Filter>98. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Obj.h">
+      <Filter>01. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Abstract_Factory.h">
+      <Filter>97. Managers\02. Abstract_Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Shader.h">
+      <Filter>97. Managers\06. ShaderMgr\00. Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\ShaderMgr.h">
+      <Filter>97. Managers\06. ShaderMgr\01. ShaderMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Buffer.h">
+      <Filter>02. Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Struct.h">
+      <Filter>98. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Tri.h">
+      <Filter>01. Object\00. Base_Shape\00. Tri</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Buffer_RectCol.h">
+      <Filter>02. Buffers\01. Buffer_RectCol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Rect.h">
+      <Filter>01. Object\00. Base_Shape\01. Rect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Buffer_CubeCol.h">
+      <Filter>02. Buffers\03. Buffer_CubeCol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Cube.h">
+      <Filter>01. Object\00. Base_Shape\04. Cube</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\KeyMgr.h">
+      <Filter>97. Managers\03. KeyMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Line.h">
+      <Filter>01. Object\00. Base_Shape\03. Line</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Transform.h">
+      <Filter>03. Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Camera.h">
+      <Filter>01. Object\99. Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Camera_Debug.h">
+      <Filter>01. Object\99. Camera\00. Camera_Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\CameraMgr.h">
+      <Filter>97. Managers\07. CameraMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\InputMgr.h">
+      <Filter>97. Managers\08. InputMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Tank.h">
+      <Filter>01. Object\00. Base_Shape\05. Tank</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Buffer_TankCol.h">
+      <Filter>02. Buffers\06. Buffer_TankCol</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Terrain.h">
+      <Filter>01. Object\01. Object\02. Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Buffer_Terrain.h">
+      <Filter>02. Buffers\07. Buffer_Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Player.h">
+      <Filter>01. Object\01. Object\00. Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Camera_Player.h">
+      <Filter>01. Object\99. Camera\01. Camera_Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Bullet.h">
+      <Filter>01. Object\01. Object\05. Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>99. Default</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Buffer_RectTex.h">
+      <Filter>02. Buffers\02. Buffer_RectTex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Buffer_CubeNor.h">
+      <Filter>02. Buffers\09. Buffer_CubeNor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\CollisionMgr.h">
+      <Filter>97. Managers\09. CollisionMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Light.h">
+      <Filter>01. Object\97. Light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Buffer_RobotNor.h">
+      <Filter>02. Buffers\10. Buffer_RobotNor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Robot.h">
+      <Filter>01. Object\01. Object\07. Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Camera_Quartar.h">
+      <Filter>01. Object\99. Camera\02. Camera_Quartar</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\ShaderFiles\FragmentShader.txt">
+      <Filter>96. ShaderFiles\00. Default</Filter>
+    </Text>
+    <Text Include="..\ShaderFiles\VertexShader.txt">
+      <Filter>96. ShaderFiles\00. Default</Filter>
+    </Text>
+    <Text Include="..\ShaderFiles\Fragment_Shader_Texture.txt">
+      <Filter>96. ShaderFiles\01. Texture</Filter>
+    </Text>
+    <Text Include="..\ShaderFiles\Vertex_Shader_Texture.txt">
+      <Filter>96. ShaderFiles\01. Texture</Filter>
+    </Text>
+    <Text Include="..\ShaderFiles\Fragment_Shader_Normal.txt">
+      <Filter>96. ShaderFiles\02. Normal</Filter>
+    </Text>
+    <Text Include="..\ShaderFiles\Vertex_Shader_Normal.txt">
+      <Filter>96. ShaderFiles\02. Normal</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OpenGL_FrameWork.rc">
+      <Filter>99. Default</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
