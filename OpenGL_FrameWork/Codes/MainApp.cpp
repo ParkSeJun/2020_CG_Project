@@ -12,6 +12,7 @@
 
 #include "Light.h"
 #include "Robot.h"
+#include "Food.h"
 
 
 CMainApp::CMainApp()
@@ -102,7 +103,7 @@ HRESULT CMainApp::Create_Object()
 		return E_FAIL;
 	CObjectMgr::GetInstance()->Add_Object(pObj, OBJECT_LIGHT);
 
-	pObj = CAbstractFactory<CPlayer>::CreateObj(vec3(65.f, 0.f, 9.3f), vec3(0.5f, 0.5f, 0.5f), vec3(1.f, 0.f, 0.f));
+	pObj = CAbstractFactory<CPlayer>::CreateObj(vec3(65.f, 0.f, 9.3f), vec3(0.5f, 0.5f, 0.5f), vec3(1.f, 1.f, 1.f));
 	if (nullptr == pObj)
 		return E_FAIL;
 	CObjectMgr::GetInstance()->Add_Object(pObj, OBJECT_PLAYER);
@@ -131,5 +132,17 @@ HRESULT CMainApp::Create_Object()
 			return E_FAIL;
 		CObjectMgr::GetInstance()->Add_Object(pObj, OBJECT_MONSTER);
 	}
+
+	for (int i = 4; i < 123; i += 12)
+	{
+		for (int j = 4; j < 123; j += 12)
+		{
+			pObj = CAbstractFactory<CFood>::CreateObj(vec3((float)j, 0.f, (float)i), vec3(1.f, 1.f, 1.f), vec3(1.f, 1.f, 0.f));
+			if (nullptr == pObj)
+				return E_FAIL;
+			CObjectMgr::GetInstance()->Add_Object(pObj, OBJECT_FOOD);
+		}
+	}
+
 	return S_OK;
 }

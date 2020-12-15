@@ -169,6 +169,7 @@
     <ClInclude Include="..\Headers\Buffer.h" />
     <ClInclude Include="..\Headers\Buffer_CubeCol.h" />
     <ClInclude Include="..\Headers\Buffer_CubeNor.h" />
+    <ClInclude Include="..\Headers\Buffer_FoodCol.h" />
     <ClInclude Include="..\Headers\Buffer_RectCol.h" />
     <ClInclude Include="..\Headers\Buffer_RectTex.h" />
     <ClInclude Include="..\Headers\Buffer_RobotNor.h" />
@@ -186,6 +187,7 @@
     <ClInclude Include="..\Headers\Define.h" />
     <ClInclude Include="..\Headers\Enum.h" />
     <ClInclude Include="..\Headers\Extern.h" />
+    <ClInclude Include="..\Headers\Food.h" />
     <ClInclude Include="..\Headers\Function.h" />
     <ClInclude Include="..\Headers\InputMgr.h" />
     <ClInclude Include="..\Headers\KeyMgr.h" />
@@ -213,6 +215,7 @@
     <ClCompile Include="..\Codes\Buffer.cpp" />
     <ClCompile Include="..\Codes\Buffer_CubeCol.cpp" />
     <ClCompile Include="..\Codes\Buffer_CubeNor.cpp" />
+    <ClCompile Include="..\Codes\Buffer_FoodCol.cpp" />
     <ClCompile Include="..\Codes\Buffer_RectCol.cpp" />
     <ClCompile Include="..\Codes\Buffer_RectTex.cpp" />
     <ClCompile Include="..\Codes\Buffer_RobotNor.cpp" />
@@ -226,6 +229,7 @@
     <ClCompile Include="..\Codes\Camera_Quartar.cpp" />
     <ClCompile Include="..\Codes\CollisionMgr.cpp" />
     <ClCompile Include="..\Codes\Cube.cpp" />
+    <ClCompile Include="..\Codes\Food.cpp" />
     <ClCompile Include="..\Codes\InputMgr.cpp" />
     <ClCompile Include="..\Codes\KeyMgr.cpp" />
     <ClCompile Include="..\Codes\Light.cpp" />

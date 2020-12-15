@@ -151,6 +151,12 @@
     <Filter Include="01. Object\99. Camera\02. Camera_Quartar">
       <UniqueIdentifier>{8750da1a-0edd-4589-904e-35478d80e62a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Object\01. Object\08. Food">
+      <UniqueIdentifier>{742977bc-e3a1-401e-99dc-981a6d65b4d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Buffers\11. Buffer_FoodCol">
+      <UniqueIdentifier>{22b09eb5-23cc-4750-a8d3-2ffe4af60fd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OpenGL_FrameWork.cpp">
@@ -254,6 +260,12 @@
     </ClCompile>
     <ClCompile Include="..\Codes\Camera_Quartar.cpp">
       <Filter>01. Object\99. Camera\02. Camera_Quartar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Food.cpp">
+      <Filter>01. Object\01. Object\08. Food</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Codes\Buffer_FoodCol.cpp">
+      <Filter>02. Buffers\11. Buffer_FoodCol</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -385,6 +397,12 @@
     </ClInclude>
     <ClInclude Include="..\Headers\ReadObj.h">
       <Filter>98. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Food.h">
+      <Filter>01. Object\01. Object\08. Food</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Buffer_FoodCol.h">
+      <Filter>02. Buffers\11. Buffer_FoodCol</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

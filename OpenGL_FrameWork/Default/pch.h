@@ -9,6 +9,8 @@
 #ifndef PCH_H
 #define PCH_H
 #define SOUND_FILE		"../Sound/BGM.wav"
+#define FOOD_SOUND_FILE		"../Sound/coin.wav"
+#define RESTART_SOUND_FILE		"../Sound/restart.wav"
 #pragma commnet(lib,"winmm.lib")
 #include <Windows.h>
 #include <mmsystem.h>

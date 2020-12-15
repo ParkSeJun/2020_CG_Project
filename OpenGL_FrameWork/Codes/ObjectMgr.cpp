@@ -45,6 +45,12 @@ void CObjectMgr::Update(_float fTimeDelta)
 		m_vecObj[OBJECT_PLAYER][0]->GetTransform()->SetUp_RotationY(radians(180.f));
 		m_vecObj[OBJECT_PLAYER][0]->GetTransform()->Set_StateInfo(STATE_POSITION, &startPos);
 	}
+
+	bool isFoodAllDie = CCollisionMgr::GetInstance()->Check_Collision_Food(m_vecObj[OBJECT_PLAYER][0], m_vecObj[OBJECT_FOOD]);
+	if (isFoodAllDie)
+	{
+		// TODO: 모든 음식을 다 먹었을 때 -> 맵 변경?
+	}
 }
 
 void CObjectMgr::Render()
