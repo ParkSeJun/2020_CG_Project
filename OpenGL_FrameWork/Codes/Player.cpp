@@ -38,7 +38,7 @@ HRESULT CPlayer::Init(vec3 vPos, vec3 vSize, vec3 vColor)
 	m_pBuffer->Init();
 	m_pTransform = new CTransform;
 
-	m_pTransform->SetUp_Speed(0.3f, radians(0.25f));
+	m_pTransform->SetUp_Speed(0.3f, radians(0.3f));
 	m_pTransform->Set_StateInfo(STATE_POSITION, &vPos);
 	//dynamic_cast<CBuffer_TankCol*>(m_pBuffer)->SetColor(vColor);	//주석 풀면 오류남
 	m_pTransform->Scaling(vSize);
