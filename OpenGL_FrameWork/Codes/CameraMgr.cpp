@@ -45,7 +45,7 @@ HRESULT CCameraMgr::SetUp_CameraOption(CAMERA eCameraMode)
 	CAMERADESC		tCameraDesc;
 	ZeroMemory(&tCameraDesc, sizeof(CAMERADESC));
 	tCameraDesc.vEye = vec3(0.f, 0.f, 10.f);
-	tCameraDesc.vAt = vec3(0.f, 0.f, 0.f);
+	tCameraDesc.vAt = vec3(0.f, -90.f, 180.f);
 	tCameraDesc.vAxisY = vec3(0.f, 1.f, 0.f);
 
 	PROJDESC		tProjDesc;
