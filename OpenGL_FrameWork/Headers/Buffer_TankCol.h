@@ -16,5 +16,11 @@ public:
 private:
 	vector<VTXNORMAL>	m_vecVertex;
 	vector<_uint>		m_vecIndices;
+	_float* vPosData;
+	_float* vNormalData;
+	_float* vTextureCoordinateData;
+	_uint* indexData;
+	_uint vertexCount;
+	_uint indexCount;
 };
 
