@@ -35,7 +35,7 @@ HRESULT CRobot::Init(vec3 vPos, vec3 vSize, vec3 vColor)
 	m_pBuffer->Init();
 	m_pTransform = new CTransform;
 
-	m_pTransform->SetUp_Speed(0.15f, radians(0.1f));
+	m_pTransform->SetUp_Speed(0.3f, radians(0.1f));
 	m_pTransform->Scaling(vSize);
 	m_pTransform->Set_StateInfo(STATE_POSITION, &vPos);
 
@@ -60,7 +60,7 @@ int CRobot::Update(_float fTimeDelta)
 
 	if (isCollideWall)
 	{
-		if (rand() % 2 == 0)
+		if (rand() % 3 == 0)
 			m_vDest = GetRandomPos(m_pTransform->Get_StateInfo(STATE_POSITION)->y);
 		else
 			m_vDest = *CObjectMgr::GetInstance()->GetObject_List(OBJECT_PLAYER)[0]->GetTransform()->Get_StateInfo(STATE_POSITION);
@@ -70,7 +70,7 @@ int CRobot::Update(_float fTimeDelta)
 	float destDistance = m_pTransform->GetDistance(&m_vDest, true);
 	if (destDistance <= .5f)
 	{
-		if (rand() % 2 == 0)
+		if (rand() % 3 == 0)
 			m_vDest = GetRandomPos(m_pTransform->Get_StateInfo(STATE_POSITION)->y);
 		else
 			m_vDest = *CObjectMgr::GetInstance()->GetObject_List(OBJECT_PLAYER)[0]->GetTransform()->Get_StateInfo(STATE_POSITION);
