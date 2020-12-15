@@ -8,6 +8,10 @@
 
 #ifndef PCH_H
 #define PCH_H
+#define SOUND_FILE		"../Sound/BGM.wav"
+#pragma commnet(lib,"winmm.lib")
+#include <Windows.h>
+#include <mmsystem.h>
 #include <iostream>
 #include "GL/glew.h "
 #include "GL/freeglut.h"

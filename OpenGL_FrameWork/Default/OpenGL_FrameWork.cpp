@@ -37,6 +37,7 @@ int main(int argc, char** argv)
 	else
 		cout << "GLEW Init" << endl;
 
+	PlaySound(TEXT(SOUND_FILE), NULL, SND_ASYNC | SND_LOOP);
 
 	pMainApp->Init();
 
