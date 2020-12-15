@@ -24,7 +24,8 @@ HRESULT CCamera_Quartar::Init()
 	m_pTransform = new CTransform;
 
 	m_pTransform->SetUp_Speed(0.5f, radians(5.f));
-	m_pTransform->Set_StateInfo(STATE_POSITION, &vec3(0.f, 50.f, 0.f));
+	vec3 asd = vec3(0.f, 50.f, 0.f);
+	m_pTransform->Set_StateInfo(STATE_POSITION, &asd);
 
 
 	return S_OK;
