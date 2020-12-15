@@ -61,18 +61,27 @@ int CPlayer::Update(_float fTimeDelta)
 	if (CKeyMgr::GetInstance()->KeyDown(KEY_SHIFT))
 	{
 		vec3 vPos = *m_pTransform->Get_StateInfo(STATE_POSITION);
-		
-		CObj* pObj = CAbstractFactory<CBullet>::CreateObj(vPos, vec3(1.f,1.f,1.f),vec3(1.f,1.f,0.f));
+
+		CObj* pObj = CAbstractFactory<CBullet>::CreateObj(vPos, vec3(1.f, 1.f, 1.f), vec3(1.f, 1.f, 0.f));
 		if (nullptr == pObj)
 			return 0;
 		pObj->GetTransform()->SetMatrix(m_pTransform->GetMatrix());
 		CObjectMgr::GetInstance()->Add_Object(pObj, OBJECT_BULLET);
 	}
 
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_SPACE))
-		m_pTransform->Go_Straight();
-
 	CBuffer_Terrain* pTerrain = (CBuffer_Terrain*)CObjectMgr::GetInstance()->GetObject_List(OBJECT_TERRAIN)[0]->GetBuffer();
+
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_SPACE))
+	{
+		vec3 forward = m_pTransform->Get_Straight();
+		CTransform* tempTransform = new CTransform;
+		tempTransform->Set_StateInfo(STATE_POSITION, &forward);
+		_float forwardHeight = pTerrain->Compute_HeightOnTerrain(tempTransform);
+
+		if (forwardHeight == 19.5f)
+			m_pTransform->Go_Straight();
+	}
+
 	_float fY = pTerrain->Compute_HeightOnTerrain(this->GetTransform());
 
 
