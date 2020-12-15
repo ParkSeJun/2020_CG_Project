@@ -42,11 +42,11 @@ HRESULT CMainApp::Init()
 		return E_FAIL;
 
 
-	if (CCameraMgr::GetInstance()->SetUp_CameraOption(CAMERA_DEBUG))
+	if (CCameraMgr::GetInstance()->SetUp_CameraOption(CAMERA_QUARTAR))
 		return E_FAIL;
 	if (FAILED(Create_Object()))
 		return E_FAIL;
-		
+
 
 	return S_OK;
 }
