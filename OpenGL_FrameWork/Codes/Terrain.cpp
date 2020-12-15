@@ -17,7 +17,7 @@ CTerrain::~CTerrain()
 HRESULT CTerrain::Init()
 {
 	m_pBuffer = new CBuffer_Terrain;
-	m_pBuffer->Init(L"../Bin/Resource/Terrain/Temp.bmp", 1.f);
+	m_pBuffer->Init(L"../Bin/Resource/Terrain/Map.bmp", 1.f);
 	m_pTransform = new CTransform;
 
 	//m_pTransform->Scaling(vec3(10.f, 10.f, 10.f));
