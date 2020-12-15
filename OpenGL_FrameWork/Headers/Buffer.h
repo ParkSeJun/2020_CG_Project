@@ -13,6 +13,7 @@ public:
 protected:
 	int		m_iNumVertices = 0;
 	int		m_iNumPolygons = 0;
+	GLuint  VBO[3];
 	GLuint	VAO = 0, VBO_Pos = 0, VBO_Col = 0;
 	GLuint	VBO_UV = 0, VBO_NORMAL;
 	GLuint	EBO = 0;

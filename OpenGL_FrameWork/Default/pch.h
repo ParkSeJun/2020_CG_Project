@@ -14,8 +14,8 @@
 #include "GL/glm/glm/glm.hpp"
 #include "GL/glm/glm/ext.hpp"
 #include "GL/glm/glm/gtc/matrix_transform.hpp"
-#include "GL/glfw/glfw3.h"
-#include "GL/glfw/glfw3native.h"
+//#include "GL/glfw/glfw3.h"
+//#include "GL/glfw/glfw3native.h"
 #include <vector>
 #include <list>
 #include <map>

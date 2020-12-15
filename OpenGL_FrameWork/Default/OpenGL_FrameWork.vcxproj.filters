@@ -383,6 +383,9 @@
     <ClInclude Include="..\Headers\Camera_Quartar.h">
       <Filter>01. Object\99. Camera\02. Camera_Quartar</Filter>
     </ClInclude>
+    <ClInclude Include="..\Headers\ReadObj.h">
+      <Filter>98. Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\ShaderFiles\FragmentShader.txt">

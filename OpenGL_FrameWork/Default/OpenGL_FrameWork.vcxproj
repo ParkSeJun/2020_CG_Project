@@ -195,6 +195,7 @@
     <ClInclude Include="..\Headers\Obj.h" />
     <ClInclude Include="..\Headers\ObjectMgr.h" />
     <ClInclude Include="..\Headers\Player.h" />
+    <ClInclude Include="..\Headers\ReadObj.h" />
     <ClInclude Include="..\Headers\Rect.h" />
     <ClInclude Include="..\Headers\Robot.h" />
     <ClInclude Include="..\Headers\Shader.h" />
