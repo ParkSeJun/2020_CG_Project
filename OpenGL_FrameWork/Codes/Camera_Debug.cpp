@@ -54,12 +54,12 @@ int CCamera_Debug::Update(_float fTimeDelta)
 
 	if (CKeyMgr::GetInstance()->KeyPressing(KEY_RETURN))
 		m_pTransform->RotationY(1);
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_I))
-	{
-		mat4 mattemp = mat4(1.f);
-		vec3 vAxis = vec3(0.f, 1.f, 0.f);
-		m_pTransform->Rotaion_Rev(mattemp, &vAxis);
-	}
+	//if (CKeyMgr::GetInstance()->KeyPressing(KEY_R))
+	//{
+	//	mat4 mattemp = mat4(1.f);
+	//	vec3 vAxis = vec3(0.f, 1.f, 0.f);
+	//	m_pTransform->Rotaion_Rev(mattemp, &vAxis);
+	//}
 	vec3 vUp, vPos, vLook;
 	vUp = *m_pTransform->Get_StateInfo(STATE_UP);
 	vLook = *m_pTransform->Get_StateInfo(STATE_LOOK);
