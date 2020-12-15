@@ -54,9 +54,9 @@ HRESULT CPlayer::Init(vec3 vPos, vec3 vSize, vec3 vColor)
 int CPlayer::Update(_float fTimeDelta)
 {
 	
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_LBUTTON))
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_LEFT))
 		m_pTransform->RotationY(10.f);
-	else if (CKeyMgr::GetInstance()->KeyPressing(KEY_RBUTTON))
+	else if (CKeyMgr::GetInstance()->KeyPressing(KEY_RIGHT))
 		m_pTransform->RotationY(-10.f);
 
 	if (CKeyMgr::GetInstance()->KeyDown(KEY_SHIFT))
