@@ -36,13 +36,13 @@ int CCamera_Quartar::Update(_float fTimeDelta)
 	Compute_RUL();
 	SetCursorPos(400, 300);
 	
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_UP))
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_W))
 		m_pTransform->Go_Up();
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_RIGHT))
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_D))
 		m_pTransform->Go_Right();
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_DOWN))
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_S))
 		m_pTransform->Go_Down();
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_LEFT))
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_A))
 		m_pTransform->Go_Left();
 
 	_long	MouseMove = 0;

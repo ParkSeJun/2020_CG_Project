@@ -54,9 +54,9 @@ HRESULT CPlayer::Init(vec3 vPos, vec3 vSize, vec3 vColor)
 int CPlayer::Update(_float fTimeDelta)
 {
 	
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_LEFT))
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_A))
 		m_pTransform->RotationY(10.f);
-	else if (CKeyMgr::GetInstance()->KeyPressing(KEY_RIGHT))
+	else if (CKeyMgr::GetInstance()->KeyPressing(KEY_D))
 		m_pTransform->RotationY(-10.f);
 
 	if (CKeyMgr::GetInstance()->KeyDown(KEY_SHIFT))
@@ -72,7 +72,7 @@ int CPlayer::Update(_float fTimeDelta)
 
 	CBuffer_Terrain* pTerrain = (CBuffer_Terrain*)CObjectMgr::GetInstance()->GetObject_List(OBJECT_TERRAIN)[0]->GetBuffer();
 
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_SPACE))
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_W))
 	{
 		vec3 forward = m_pTransform->Get_Straight();
 		CTransform* tempTransform = new CTransform;

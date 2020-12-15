@@ -31,24 +31,24 @@ int CCamera_Player::Update(_float fTimeDelta)
 {
 	SetCursorPos(400, 300);
 
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_UP))
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_W))
 		m_pTransform->Go_Straight();
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_RIGHT))
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_D))
 		m_pTransform->Go_Right();
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_DOWN))
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_S))
 		m_pTransform->BackWard();
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_LEFT))
+	if (CKeyMgr::GetInstance()->KeyPressing(KEY_A))
 		m_pTransform->Go_Left();
 
 	_long	MouseMove = 0;
 
 	if (MouseMove = CInputMgr::GetInstance()->Get_DIMouseMove(DIM_X))
-		m_pTransform->RotationY(-MouseMove * 0.1f);
+		m_pTransform->RotationY(-MouseMove * 0.02f);
 
 	if (MouseMove = CInputMgr::GetInstance()->Get_DIMouseMove(DIM_Y))
 	{
 		vec3 Axis = *m_pTransform->Get_StateInfo(STATE_RIGHT);
-		m_pTransform->Rotation_Axis(-(MouseMove) * 0.1f, &Axis);
+		m_pTransform->Rotation_Axis(-(MouseMove) * 0.02f, &Axis);
 	}
 
 
