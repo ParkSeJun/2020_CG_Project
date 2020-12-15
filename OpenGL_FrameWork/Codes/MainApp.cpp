@@ -103,7 +103,7 @@ HRESULT CMainApp::Create_Object()
 		return E_FAIL;
 	CObjectMgr::GetInstance()->Add_Object(pObj, OBJECT_LIGHT);
 
-	pObj = CAbstractFactory<CPlayer>::CreateObj(vec3(65.f, 0.f, 9.3f), vec3(0.5f, 0.5f, 0.5f), vec3(1.f, 1.f, 1.f));
+	pObj = CAbstractFactory<CPlayer>::CreateObj(vec3(65.f, 0.f, 9.3f), vec3(0.1f, 0.1f, 0.1f), vec3(1.f, 1.f, 1.f));
 	if (nullptr == pObj)
 		return E_FAIL;
 	CObjectMgr::GetInstance()->Add_Object(pObj, OBJECT_PLAYER);
