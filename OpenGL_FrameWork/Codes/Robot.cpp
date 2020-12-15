@@ -98,7 +98,6 @@ int CRobot::Update(_float fTimeDelta)
 		Compute_RUL();
 		if (iLength <= 3.f)
 		{
-			srand(unsigned(time(NULL)));
 			int		iRandX = rand() % 50 + 1;
 			int		iRandZ = rand() % 50 + 1;
 

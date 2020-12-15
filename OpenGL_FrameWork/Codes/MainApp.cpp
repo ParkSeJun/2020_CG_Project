@@ -26,6 +26,8 @@ CMainApp::~CMainApp()
 
 HRESULT CMainApp::Init()
 {
+	srand(unsigned(time(NULL)));
+
 	HWND hWnd = GetActiveWindow();
 	HINSTANCE hInstC = GetModuleHandle(0);
 
@@ -53,15 +55,13 @@ HRESULT CMainApp::Init()
 
 void CMainApp::Update(_float fTimeDelta)
 {
-	srand(unsigned(time(NULL)));
-
 	if (CKeyMgr::GetInstance()->KeyDown(KEY_1))
 		CCameraMgr::GetInstance()->Swap_Camera(CAMERA_DEBUG);
 	else if (CKeyMgr::GetInstance()->KeyDown(KEY_2))
 		CCameraMgr::GetInstance()->Swap_Camera(CAMERA_QUARTAR);
 	else if (CKeyMgr::GetInstance()->KeyDown(KEY_3))
 		CCameraMgr::GetInstance()->Swap_Camera(CAMERA_DEBUG);
-	
+
 
 	CInputMgr::GetInstance()->SetUp_InputState();
 	CKeyMgr::GetInstance()->Update();
