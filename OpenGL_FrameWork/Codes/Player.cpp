@@ -45,7 +45,7 @@ HRESULT CPlayer::Init(vec3 vPos, vec3 vSize, vec3 vColor)
 
 
 
-	m_pTransform->SetUp_RotationY(radians(-90.f));
+	m_pTransform->SetUp_RotationY(radians(180.f));
 
 	return S_OK;
 }
