@@ -52,7 +52,7 @@ void CKeyMgr::Update()
 		m_dwKey |= KEY_2;
 	if (GetAsyncKeyState('3') & 0x8000)
 		m_dwKey |= KEY_3;
-	if (GetAsyncKeyState('r') & 0x8000)
+	if ((GetAsyncKeyState('r') & 0x8000) || (GetAsyncKeyState('R') & 0x8000))
 		m_dwKey |= KEY_R;
 }
 
